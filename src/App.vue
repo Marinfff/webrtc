@@ -27,7 +27,7 @@ export default {
       console.log("create offer");
       try {
         const offer = await this.connection.createOffer();
-        await this.connection.setLocalDescription(offer);;
+        await this.connection.setLocalDescription(offer);
         this.connection.onicecandidate = e => {
           this.sendOffer(this.connection.localDescription, e);
         };
